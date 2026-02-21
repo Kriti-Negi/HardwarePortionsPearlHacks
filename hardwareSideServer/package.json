@@ -1,0 +1,19 @@
+{
+  "name": "pearlhacks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@serialport/bindings-cpp": "^13.0.1",
+    "@serialport/parser-readline": "^13.0.0",
+    "express": "^5.2.1",
+    "serialport": "^13.0.0",
+    "ws": "^8.19.0"
+  }
+}
