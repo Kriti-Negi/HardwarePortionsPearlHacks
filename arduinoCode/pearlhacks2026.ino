@@ -25,7 +25,7 @@ void setup() {
 void loop() {
 
   // check for any written bits
-  int percentSpeed = 100;
+  int percentSpeed = 1;
   if (Serial.available() > 0){
       percentSpeed = ((int)Serial.read() - 48);
       if(percentSpeed >= 0 && percentSpeed <= 9){
