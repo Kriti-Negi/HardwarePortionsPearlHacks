@@ -3,6 +3,12 @@ const { ReadlineParser } = require('@serialport/parser-readline');
 const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
+const cors = require('cors'); 
+
+app.use(cors({
+  origin: 'http://localhost:5173' // Allow only your frontend origin
+}));
+
 const portName = '/dev/cu.usbmodemB0818499CFF02';
 
 const port = new SerialPort({
@@ -46,10 +52,10 @@ smaller # => larger speed
 
 app.get("/:setTimeIntervalInbetween", (req, res) => {
     console.log("accessed");
-    let time_inteval_btw = req.params.setTimeIntervalInbetween;
+    let time_inteval_btw = parseInt(req.params.setTimeIntervalInbetween, 10);
     console.log(time_inteval_btw);
     
-    port.write(time_inteval_btw);
+    port.write("" + time_inteval_btw);
     
 })
 
